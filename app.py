@@ -14,7 +14,7 @@ mltoken = token_response.json()["access_token"]
 
 header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken}
 
-file = "dataset\\Crude Oil Prices Daily.xlsx"
+file = "dataset/Crude Oil Prices Daily.xlsx"
 df = pd.read_excel(file)
 df["Closing Value"].fillna(df["Closing Value"].mean(), inplace=True)
 x = df["Closing Value"].values.reshape(-1,1)
