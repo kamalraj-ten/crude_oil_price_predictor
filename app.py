@@ -70,7 +70,7 @@ def getCrudeOilPriceCloud(prices=[]):
     if 'errors' in response_scoring.json():
      # return "Error in IBM Cloud"
      # return the average of the prices to depict the prediction
-     return avg(prices)
+     return (sum(prices) / len(prices))
     response = response_scoring.json()['predictions'][0]["values"]
     res = scaler.inverse_transform(response)
     return round(res[0][0],4)
